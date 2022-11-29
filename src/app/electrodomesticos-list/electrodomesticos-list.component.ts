@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Elect } from './elec';
 
 @Component({
@@ -6,43 +6,63 @@ import { Elect } from './elec';
   templateUrl: './electrodomesticos-list.component.html',
   styleUrls: ['./electrodomesticos-list.component.css']
 })
-export class ElectrodomesticosListComponent {
- elecs: Elect[] = [
+export class ElectrodomesticosListComponent implements OnInit {
+  elecs: Elect[] = [
+    {
+    product: "Pava electrica",
+    brand: "Samsung",
+    price: 5000,
+    stock: 5,
+    image: "assets/img/pavasamsung.jpg",
+    clearance:false,
+    quantity: 0,
+
+  },
   {
-   product: "Pava electrica",
-   brand: "Samsung",
-   price: 5000,
-   stock: 5,
-   image: "assets/img/pavasamsung.jpg",
-   clearance:false,
+    product: "Impresora ",
+    brand: "Pantum",
+    price: 3500,
+    stock: 5,
+    image: "",
+    clearance:false,
+    quantity: 0,
 
- },
- {
-  product: "Impresora ",
-  brand: "Pantum",
-  price: 3500,
-  stock: 5,
-  image: "",
-  clearance:false,
+  },
+  {
+    product: "Teclado",
+    brand: "Genius",
+    price: 1500,
+    stock: 7,
+    image: "",
+    clearance:true,
+    quantity: 0,
+  },
+  {
+    product: "Teclado gamer",
+    brand: "Genius",
+    price: 1500,
+    stock: 0,
+    image: "",
+    clearance:false,
+    quantity: 0,
+  }
+  ];
 
-},
-{
-  product: "Teclado",
-  brand: "Genius",
-  price: 1500,
-  stock: 7,
-  image: "",
-  clearance:true,
+  constructor() { }
+  ngOnInit():void{
 
-},
-{
-  product: "Teclado gamer",
-  brand: "Genius",
-  price: 1500,
-  stock: 0,
-  image: "",
-  clearance:false,
+  }
+  upQuantity(elec: Elect): void{
+    if(elec.quantity< elec.stock)
+    elec.quantity++;
 
-}
-];
+  }
+  downQuantity(elec: Elect): void{
+    if(elec.quantity > 0)
+    elec.quantity--;
+
+  }
+
+
+
 }

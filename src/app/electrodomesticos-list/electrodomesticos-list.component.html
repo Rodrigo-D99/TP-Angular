@@ -6,15 +6,20 @@
             <th>Marca</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Comprar</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let elec of elecs" [ngClass]="{'clearance': elec.clearance}">
-            <td><img [src]="elec.image" [alt]="elec.product"></td>
+            <td><img width="100px" class="img-thumbnail" [src]="elec.image" [alt]="elec.product"></td>
             <td>{{elec.product}}</td>
             <td>{{elec.brand}}</td>
             <td>{{elec.price | currency}}</td>
             <td><span class="badge text-bg-warning" *ngIf="elec.stock==0">SIN STOCK</span></td>
+            <td><button class="btn btn-primary btn-sm" (click)="downQuantity(elec)">-</button>
+               <input type="text" [(ngModel)]="elec.quantity"> 
+                <button class="btn btn-primary btn-sm" (click)="upQuantity(elec)">+</button>
+            </td>
         </tr>
     </tbody>
 </table>
