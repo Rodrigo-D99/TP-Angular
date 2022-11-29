@@ -1,5 +1,5 @@
 <table>
-    <thead>
+    <thead class="tabñe text-center">
         <tr>
             <th>Imagen</th>
             <th>Producto</th>
@@ -16,9 +16,20 @@
             <td>{{elec.brand}}</td>
             <td>{{elec.price | currency}}</td>
             <td><span class="badge text-bg-warning" *ngIf="elec.stock==0">SIN STOCK</span></td>
-            <td><button class="btn btn-primary btn-sm" (click)="downQuantity(elec)">-</button>
-               <input type="text" [(ngModel)]="elec.quantity"> 
-                <button class="btn btn-primary btn-sm" (click)="upQuantity(elec)">+</button>
+            <td>
+                <div class="input-group" *ngIf="elec.stock">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        <button class="btn btn-primary btn-sm" (click)="downQuantity(elec)">-</button>
+                        </div>
+                    <input type="text" 
+                    [(ngModel)]="elec.quantity" 
+                    (keyup)="changeQuantity($event, elec)">
+                        <div class="input-group-append"> 
+                        <button class="btn btn-primary btn-sm" (click)="upQuantity(elec)">+</button>
+                        </div>
+                    </div>
+                </div>
             </td>
         </tr>
     </tbody>

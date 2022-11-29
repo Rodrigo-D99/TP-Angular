@@ -8,15 +8,12 @@
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page"[routerLink]="['/']">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contacto</a>
+            <a class="nav-link" [routerLink]="['/about']">Contacto</a>
           </li>
-         
-          <li class="nav-item">
-            <a class="nav-link" href="#">Algo más</a>
-          </li>
+         g
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -30,14 +27,8 @@
 <h1>{{title}}</h1>
 </div>
 <div class="container">
-  <div class="row">
-   
-    <div class="col-8"> <app-electrodomesticos-list>
-      
-    </app-electrodomesticos-list> </div>
-    <div class="col-4">Carrito de compras</div>
-  </div>
+  <router-outlet></router-outlet>
 </div>
 
 
-<footer>{{title}} 2022</footer>
+<footer class="footer text-center" class="card text-bg-dark mb-3">{{title}} 2022</footer>

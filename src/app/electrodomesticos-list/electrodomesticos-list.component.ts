@@ -62,7 +62,9 @@ export class ElectrodomesticosListComponent implements OnInit {
     elec.quantity--;
 
   }
-
+  changeQuantity(event, elec: Elect) :void{
+    console.log(event.target);
+  }
 
 
 }
