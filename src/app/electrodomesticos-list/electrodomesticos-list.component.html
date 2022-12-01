@@ -17,19 +17,8 @@
             <td>{{elec.price | currency}}</td>
             <td><span class="badge text-bg-warning" *ngIf="elec.stock==0">SIN STOCK</span></td>
             <td>
-                <div class="input-group" *ngIf="elec.stock">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                        <button class="btn btn-primary btn-sm" (click)="downQuantity(elec)">-</button>
-                        </div>
-                    <input type="text" 
-                    [(ngModel)]="elec.quantity" 
-                    (keyup)="changeQuantity($event, elec)">
-                        <div class="input-group-append"> 
-                        <button class="btn btn-primary btn-sm" (click)="upQuantity(elec)">+</button>
-                        </div>
-                    </div>
-                </div>
+                <app-input-integer [(quantity)]="elec.quantity" [max]="elec.stock"  *ngIf="elec.stock" (maxReached)="maxReached($event)"> </app-input-integer>
+                cant: {{elec.quantity}}
             </td>
         </tr>
     </tbody>

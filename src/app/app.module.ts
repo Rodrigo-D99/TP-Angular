@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { AcmeElectComponent } from './acme-elect/acme-elect.component';
 import { CartComponent } from './cart/cart.component';
 import { AcmeAboutComponent } from './acme-about/acme-about.component';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +17,7 @@ import { AcmeAboutComponent } from './acme-about/acme-about.component';
     AcmeElectComponent,
     CartComponent,
     AcmeAboutComponent,
+    InputIntegerComponent,
   ],
   imports: [
     BrowserModule,

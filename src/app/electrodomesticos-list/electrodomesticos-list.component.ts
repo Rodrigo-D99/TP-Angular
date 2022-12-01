@@ -52,19 +52,9 @@ export class ElectrodomesticosListComponent implements OnInit {
   ngOnInit():void{
 
   }
-  upQuantity(elec: Elect): void{
-    if(elec.quantity< elec.stock)
-    elec.quantity++;
 
-  }
-  downQuantity(elec: Elect): void{
-    if(elec.quantity > 0)
-    elec.quantity--;
-
-  }
-  changeQuantity(event, elec: Elect) :void{
-    console.log(event.target);
-  }
-
+maxReached(m: string){
+  alert(m);
+}
 
 }
