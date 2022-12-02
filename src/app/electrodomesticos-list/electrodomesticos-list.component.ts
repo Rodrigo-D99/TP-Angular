@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ElectCartService } from '../elect-cart.service';
 import { Elect } from './elec';
 
 @Component({
@@ -48,13 +49,21 @@ export class ElectrodomesticosListComponent implements OnInit {
   }
   ];
 
-  constructor() { }
+  
+
+  constructor(private cart: ElectCartService) { 
+  
+  }
   ngOnInit():void{
 
   }
-
-maxReached(m: string){
-  alert(m);
-}
+  addToCart(elec): void{
+    this.cart.addToCart(elec);
+    elec.stock -= elec.quantity;
+    elec.quantity = 0;
+  }
+  maxReached(m: string){
+    alert(m);
+  }
 
 }
