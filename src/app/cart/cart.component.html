@@ -1,6 +1,7 @@
 <h3>Carrito de compras</h3>
 <ul>
     <li *ngFor="let elec of cartList$ | async">
+        <img width="50px" class="img-thumbnail" [src]="elec.image" [alt]="elec.product"> 
         {{elec.product}}: {{elec.quantity}}
 
     </li>

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./acme-about.component.css']
 })
 export class AcmeAboutComponent {
-
+title="Acme";
 }
